@@ -1,0 +1,32 @@
+<h3>Task Scheduler</h3>
+
+<a href = "{% url 'list' %}">Task1</a>
+
+<div>
+    <form method = "POST" action="">
+        {% csrf_token %}
+        {{form.title}}
+        <input type="submit" name ="Add Task">
+    </form>
+</div>
+
+<a href ="{% url 'sort' %}">Sort</a>
+
+{% for task in tasks %}
+    <div>
+    <a href = "{% url 'edit_task' task.id%}">Edit</a>
+    <a href = "{% url 'delete_task' task.id%}">Delete</a>
+    <a href="{% url 'mark_done' task.id%}">
+        {% if task.done == False %}
+            <span>Done</span>
+        {%else%}
+            <span>Undone</span>
+        {%endif%}
+    </a>
+    {% if task.done == True%}
+        <strike>{{task}}</strike>
+    {% else %}
+        <span>{{task}}</span>
+    {%endif%}
+    </div>
+{%endfor%}

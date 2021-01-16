@@ -1,0 +1,15 @@
+<h3>Edit</h3>
+
+<p>Add new name for {{task}}</p>
+<p>For priority, increases for higher priority level. Sorting will prioritize priority level over the alphabet</p>
+
+<form method = "POST" action = ''>
+    {% csrf_token %}
+    {{form}}
+
+    <p>
+    <input  type="submit" name = "Edit Task">
+    <span><a href="{% url 'list' %}">Cancel</a></span>
+    </p>
+</form>
+

@@ -1,0 +1,13 @@
+<h3>Update Task</h3>
+
+<p>Insert New Task Name for "{{task}}" ?</p>
+
+<form method="POST" action =''>
+    {% csrf_token %}
+
+    {{form.title}}
+
+    <input type="submit" name="Edit_Task_Name">
+    <span><a href="{% url 'list'%}">Cancel</a></span>
+
+</form>

@@ -1,0 +1,32 @@
+<link rel="stylesheet" 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+crossorigin="anonymous">
+<style>
+    body{
+        background-color: #5ffd4a;
+    }
+    .center{
+        width: 100%;
+        padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+    }
+    .submit{
+        background-color: rgb(72, 84, 138);
+    }
+</style>
+
+
+
+<div class="center">
+    <p>Are you sure you want to quickSort"?</p>
+
+    <a href="{% url 'list' sort_type = 'title' %}">Cancel</a>
+
+    <form method = "POST" action = "">
+        {% csrf_token %}
+        
+        <input type="submit" name="Confirm">
+    </form>
+</div>
