@@ -1,0 +1,51 @@
+{% extends "Goals/base.html" %}
+
+{% block title%}list{%endblock%}
+
+{%block content%}
+
+<a href="{% url 'home' %}">Back To Home</a>
+<form action="{% url 'list' %}">
+    <input type = "search" placeholder="Search" name="search">
+    <button type = "submit">Search</button>
+</form>
+<form method="POST" action = "">
+
+    {% csrf_token %}
+    {{form.title}}
+
+
+    <button type = "submit" name = "Add task">Add Task</button>
+</form>
+
+<a class="btn btn-sort" href= "{% url 'sort'%}">Sort</a>
+
+{% for task in tasks %}
+<div class ="item-row">
+    {% if task.done == True%}
+        <strike>{{task}}</strike>
+    {% else %}
+        <span>{{task}}</span>
+    {%endif%}
+    <span>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Configure
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class ="dropdown-item" href = "{% url 'edit_task' task.id%}">Edit</a>
+                <a class="dropdown-item" href = "{% url 'delete_task' task.id%}">Delete</a>
+            </div>
+            <a class="btn btn-vanilla" href = "{% url 'mark_done' task.id%}">
+                {% if task.done == True %}
+                    undone
+                {%else%}
+                    done
+                {%endif%}
+            </a>
+        </div>
+    </span>
+
+</div>
+{%endfor%}
+{%endblock%}

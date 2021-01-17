@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html>
+
+
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+
+        <style>
+            body{
+                background-color: #b3bd5c;
+            }
+            input{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+            input::placeholder {
+              color: #d3d3d3;
+            }
+            .submit{
+                background-color: #6BA3E8;
+            }
+            .center-column{
+                width:600px;
+                margin: 20px auto;
+                padding:20px;
+                background-color: #fff;
+                border-radius: 3px;
+                box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+            }
+            .item-row{
+                background-color: #56a768;
+                margin: 10px;
+                padding: 20px;
+                border-radius: 3px;
+                color: #fff;
+                font-size: 16px;
+                box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+            }
+            .btn-danger{
+                background-color: #ff2819;
+                border-color: #e51b00;
+            }
+            .btn-edit{
+                background-color: #ffae19;
+                border-color:  #e59400;
+            }
+            .btn-sort{
+                color:#fff;
+                margin: 10px;
+                background-color:  #56a768;
+                border-color: #000000;
+            }
+            .btn-vanilla{
+                background-color:#ffffff;
+                border-color: #000000;
+            }
+        </style>
+
+        <title>{% block title %}{%endblock%}</title>
+    </header>
+    <body>
+        <div class = "btn ml-4" style = "width: 400px; background-color: chocolate; border-radius: 3px; margin: 20px auto;" >
+            {% block content%}{%endblock%}
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

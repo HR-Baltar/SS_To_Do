@@ -1,0 +1,21 @@
+{% extends "Goals/base.html" %}
+
+{% block title%}Home{%endblock%}
+
+{%block content%}
+
+
+
+    <a href= "{% url 'list' %}">Task1</a>
+
+    {% for task in tasks %}
+    <div>
+        {% if task.done == True%}
+            <strike>{{task}}</strike>
+        {% else %}
+            <span>{{task}}</span>
+        {%endif%}
+    {%endfor%}
+    </div>
+
+{%endblock%}

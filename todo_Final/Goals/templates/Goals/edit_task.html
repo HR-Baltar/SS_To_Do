@@ -1,0 +1,26 @@
+{% extends "Goals/base.html" %}
+
+{% block title%}Edit {{task}}?{%endblock%}
+
+{%block content%}
+
+
+    <h3>Edit</h3>
+
+    <p>Add new name for "{{task}}"</p>
+
+
+    <form method = "POST" action = ''>
+        {% csrf_token %}
+        <div class = "item-row">
+        {{form.title}}
+        {{form.done}}
+        </div>
+
+        <p>
+        <input  type="submit" name = "Edit Task">
+        <span><a href="{% url 'list' %}">Cancel</a></span>
+        </p>
+    </form>
+
+{%endblock%}
