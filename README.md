@@ -1,0 +1,1 @@
+# STEMU-STATIC
