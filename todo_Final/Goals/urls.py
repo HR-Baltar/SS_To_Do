@@ -7,8 +7,8 @@ urlpatterns=[
     path('delete_task/<str:pk>', views.delete_task, name = 'delete_task'),
     path('edit_edit/<str:pk>', views.edit_task, name = 'edit_task'),
     path('sort', views.sort, name = 'sort'),
-    path('mark_done/<str:pk>', views.mark_done, name = 'mark_done') 
-
+    path('mark_done/<str:pk>', views.mark_done, name = 'mark_done') ,
+    path('clearCompleted', views.clearCompleted, name = 'clearCompleted'),
 ]
 
 

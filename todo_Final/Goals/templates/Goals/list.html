@@ -19,6 +19,7 @@
 </form>
 
 <a class="btn btn-sort" href= "{% url 'sort'%}">Sort</a>
+<a class="btn btn-danger" href="{% url 'clearCompleted'%}">Clear Completed</a>
 
 {% for task in tasks %}
 <div class ="item-row">

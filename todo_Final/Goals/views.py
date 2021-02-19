@@ -79,10 +79,18 @@ def sort(request):
         task.save()
     return redirect('list')
 
+def clearCompleted(request):
+    tasks = Task.objects.filter(done=True)
+    for task in tasks:
+        task.delete()
+        print("deleted")
+
+    return redirect('list')
+
 def mark_done(request, pk):
     task = Task.objects.get(id=pk)
     if request.method == "GET":
-        print(task.done)
+        #print(task.done)
         task.done = not task.done
         task.save()
         return redirect('list')
